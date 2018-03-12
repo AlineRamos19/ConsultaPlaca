@@ -42,7 +42,7 @@ public class NavDrawerActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
-            case android.R.id.home:
+            case R.drawable.ic_action_menu:
                 if(drawer!=null){
                     abrirDrawer();
                     return true;
