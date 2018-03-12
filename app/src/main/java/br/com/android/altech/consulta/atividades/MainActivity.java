@@ -6,10 +6,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 
-import br.com.android.altech.consulta.PlacaMask;
+import br.com.android.altech.consulta.util.PlacaMask;
 import br.com.android.altech.consulta.R;
 import br.com.android.altech.consulta.dao.DatabaseManager;
 import br.com.android.altech.consulta.dao.PlacaDbHelper;
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView mVersao;
     private TextView mPreço;
     private LinearLayout mLayoutExibeCarro;
-    private TextWatcher mplacaMask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.tollbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mLayoutExibeCarro = findViewById(R.id.layout_exibe_carro);
         mLayoutExibeCarro.setVisibility(View.GONE);
@@ -63,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
         mVersao = findViewById(R.id.versão);
         mPreço = findViewById(R.id.preço);
         mPlacaInformada = findViewById(R.id.placa_informada);
-        mPlacaInformada.addTextChangedListener(PlacaMask.insert("###-####", mPlacaInformada));
+        mPlacaInformada.addTextChangedListener(PlacaMask.insert("###-####",
+                mPlacaInformada));
 
+        drawerLayout = findViewById(R.id.drawer_layout);
 
         TextView mBuscarPlaca = findViewById(R.id.txt_buscar);
         mBuscarPlaca.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +166,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 return true;
+
+            case android.R.id.home:
+                if (drawerLayout != null) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                    return true;
+                }
         }
         return super.onOptionsItemSelected(item);
     }

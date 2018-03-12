@@ -1,4 +1,4 @@
-package br.com.android.altech.consulta;
+package br.com.android.altech.consulta.util;
 
 
 import android.text.Editable;
