@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="36dp">
+
+        <TextView
+            android:id="@+id/item_placa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:textColor="#82B1FF"
+            android:textSize="28sp"
+            tools:text="AAA-1234" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextViewHistorico"
+                android:text="@string/txt_ano_historico"/>
+
+            <TextView
+                style="@style/TextViewHistorico"
+                android:text="@string/txt_preco_historico"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextViewHistoricoBD"
+                android:id="@+id/item_ano"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                tools:text="1985"/>
+
+            <TextView
+                android:id="@+id/item_preco"
+                style="@style/TextViewHistoricoBD"
+                tools:text="R$ 10.000,00" />
+
+        </LinearLayout>
+</LinearLayout>

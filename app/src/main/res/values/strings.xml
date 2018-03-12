@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Consulta</string>
+    <string name="aviso_placa_invalida">Favor informar uma placa válida!</string>
+    <string name="placa_sem_retorno">Placa não encontrada na base de dados!</string>
+    <string name="aviso_sem_conexao">Nenhuma rede disponível! Favor verificar conexão.</string>
+    <string name="titulo_toolbar_busca">BUSCA</string>
+    <string name="txt_busca">BUSCA</string>
+    <string name="txt_preco_historico">PREÇO</string>
+    <string name="txt_ano_historico">ANO</string>
+    <string name="txt_toolbar_historico">HISTÓRICO</string>
+    <string name="title_activity_nav_drawer">NavDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar navigation drawer</string>
+
+
+</resources>
